@@ -17,7 +17,7 @@ public class PositionalConstraintChecker {
 						letter = constraint.charAt(j);
 						position = constraint.charAt(j + 1)-'1';
 				   
-						if (position > word.length()||letter != word.charAt(position)){
+						if (position > word.length()-1 || letter != word.charAt(position)){
 							failed = true;
 							break;
 				        }
