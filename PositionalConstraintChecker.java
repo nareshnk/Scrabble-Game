@@ -2,39 +2,44 @@ import java.util.*;
 public class PositionalConstraintChecker {
 	
 		  
-	   public static ArrayList<String> ConstraintChecker(String[] wordList, String constraint) {
+	   public static TreeMap<Integer,String> ConstraintChecker(TreeMap<Integer, String> wordList, String constraint) {
 		  
 		   char letter;
 		   int position;
 		   boolean failed;
-		   ArrayList<String> validWords = new ArrayList<String>();
-		   for (String word: wordList) {
-			  failed = false;
-			   for (int j = 0;j < constraint.length();j += 2){
-				   letter = constraint.charAt(j);
-				   position = constraint.charAt(j + 1)-1;
+		   String[] words;
+		   TreeMap<Integer,String> validWords = new TreeMap<Integer,String>();
+		   for ( Map.Entry<Integer, String> entry : wordList.entrySet() ) {
+				words = entry.getValue().split("\\s+");
+				for (String word : words){
+					failed = false;
+					for (int j = 0;j < constraint.length();j += 2){
+						letter = constraint.charAt(j);
+						position = constraint.charAt(j + 1)-'1';
 				   
-				   if (position>word.length()||letter != word.charAt(position)){
-					   failed = true;
-					   break;
-				   }
-			   }
-			   if (!failed){
-				   validWords.add(word);
-			   }
+						if (position > word.length()||letter != word.charAt(position)){
+							failed = true;
+							break;
+				        }
+			        }
+					if (!failed){
+						String wordOfSameScore = validWords.get(entry.getKey());
+						if( wordOfSameScore == null){
+							wordOfSameScore = word;
+						}
+						else{
+							wordOfSameScore = wordOfSameScore + " " + word;
+						}
+						validWords.put(entry.getKey(), wordOfSameScore);
+				   
+					}
 
-			   
-		  }
+				}					
+					
+			}
+		   
 		   return validWords;
 	   }
 	   
-	   public static void main(String[] args) {
-		   String[] test = {"Hi","Hello","Beast","parade"};
-		   String constraint = "H0i1";
-		   ArrayList<String> testarray = new ArrayList<String>();
-		   testarray = PositionalConstraintChecker.ConstraintChecker(test,constraint);
-		   for (String s: testarray)
-		   System.out.println(s);
-		   
-		}
+	   
 	}
