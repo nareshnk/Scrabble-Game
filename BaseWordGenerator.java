@@ -5,6 +5,16 @@ import java.io.*;
 
 class BaseWordGenerator {
 	
+	public static int[] letterScore = {1,3,3,2,1, 4,2,4,1,8, 5,1,3,1,1, 3,10,1,1,1, 1,4,4,8,4,10};
+	
+	public static int wordScore(String word) {
+		int score=0;
+		for(int i = 0; i < word.length(); i++ ) {
+			score += letterScore[word.charAt(i)-'a'];
+		}
+		return score;
+	}
+	
 	public static ArrayList<String> generateAllCombinationsOfWords(String input) {
 		char[] inputArray = input.toCharArray();
 		Arrays.sort(inputArray);
@@ -31,6 +41,6 @@ class BaseWordGenerator {
 	}
 	
 	public static void main (String[] args) throws java.lang.Exception {
-		
+		System.out.println(wordScore("baaq"));
 	}
 }
