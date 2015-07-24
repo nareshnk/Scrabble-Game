@@ -2,10 +2,12 @@
  * Created by test on 7/22/2015.
  * by team
  */
-import java.util.Arrays;
-import java.io.BufferedReader;
+
 import java.io.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Anagrams {
     

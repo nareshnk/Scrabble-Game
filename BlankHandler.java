@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /**
  * Created by test on 7/24/2015.
  */
-public class BlankHandling {
+public class BlankHandler {
     public static int alphabetWeights[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
 
     HashMap<Integer, String> updateWordScore = new HashMap<Integer, String>();
@@ -25,6 +24,11 @@ public class BlankHandling {
         }
     }
 
+    public static ArrayList<String> getBlankReplacedWords(String word) {
+        replaceBlanks(word);
+        return blankReplacedWords;
+    }
+
     public static int updatedScore(String word, String rackAlphabets) {
         char [] presentLetters = rackAlphabets.toCharArray();
 
@@ -36,4 +40,5 @@ public class BlankHandling {
         }
         return score;
     }
+
 }
