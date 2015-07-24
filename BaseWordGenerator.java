@@ -7,7 +7,7 @@ class BaseWordGenerator{
 	
 	static Anagrams AnagramCollection;
 	
-	public void addToHash(Map<Integer, String> scoreMap, ArrayList<String> words){
+	public static void addToHash(Map<Integer, String> scoreMap, ArrayList<String> words){
         
 		int score;
 		for(String eachWord: words){
@@ -15,14 +15,25 @@ class BaseWordGenerator{
 			if (AnagramCollection.map.containsKey(eachWord)) {
 				score = wordScore(eachWord);
 				if (scoreMap.containsKey(score)) {
-					scoreMap.put(score, scoreMap.get(score) + " " + word);
-				} else {
-					scoreMap.put(score, word);
+					scoreMap.put(score, scoreMap.get(score) + " " + AnagramCollection.map.get(eachWord));
+				} 
+				else {
+					scoreMap.put(score, AnagramCollection.map.get(eachWord));
 				}
 			}
 		}
 		
     }
+	
+	public static int[] letterScore = {1,3,3,2,1, 4,2,4,1,8, 5,1,3,1,1, 3,10,1,1,1, 1,4,4,8,4,10};
+	
+	public static int wordScore(String word) {
+		int score=0;
+		for(int i = 0; i < word.length(); i++ ) {
+			score += letterScore[word.charAt(i)-'a'];
+		}
+		return score;
+	}
 	
 	public static ArrayList<String> generateAllCombinationsOfWords(String input) {
 		char[] inputArray = input.toCharArray();
@@ -39,7 +50,7 @@ class BaseWordGenerator{
 	
 	public static Map<Integer, String> generateScoreHash(String rack){
 	
-		public static Map<Integer, String> scoreMap = new HashMap<Integer, String>();
+		Map<Integer, String> scoreMap = new HashMap<Integer, String>();
 	
 		ArrayList<String> allPossibleWords = (generateAllCombinationsOfWords(rack));
 		addToHash(scoreMap,allPossibleWords);
@@ -57,11 +68,12 @@ class BaseWordGenerator{
 	        combinationUtil(arr, data, i+1, end, index+1, r, listOfWords);
 	    }
 	}
-	
-	public static void main (String[] args) throws java.lang.Exception {
+
+public static void main (String[] args) throws java.lang.Exception {
 
 		AnagramCollection = new Anagrams();
         AnagramCollection.readFile(FILE);	
 	
 	}
+
 }
