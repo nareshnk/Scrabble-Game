@@ -11,9 +11,11 @@ class BaseWordGenerator{
         
 		int score;
 		for(String eachWord: words){
-			
+			//System.out.println(eachWord+AnagramCollection.map.containsKey(eachWord));
 			if (AnagramCollection.map.containsKey(eachWord)) {
+				//System.out.println(eachWord);
 				score = wordScore(eachWord);
+				
 				if (scoreMap.containsKey(score)) {
 					scoreMap.put(score, scoreMap.get(score) + " " + AnagramCollection.map.get(eachWord));
 				} 
@@ -38,11 +40,10 @@ class BaseWordGenerator{
 	public static ArrayList<String> generateAllCombinationsOfWords(String input) {
 		char[] inputArray = input.toCharArray();
 		Arrays.sort(inputArray);
-		System.out.println(inputArray);
 		ArrayList<String> output = new ArrayList<String>();
 		
 		for(int i = 2; i <= inputArray.length; i++) {
-			char[] data = new char[inputArray.length];
+			char[] data = new char[i];
 			combinationUtil(inputArray, data, 0, inputArray.length - 1, 0, i, output);
 		}
 		return output;
@@ -71,9 +72,9 @@ class BaseWordGenerator{
 
 public static void main (String[] args) throws java.lang.Exception {
 
+		
 		AnagramCollection = new Anagrams();
         AnagramCollection.readFile(FILE);	
-	
+		System.out.println(generateScoreHash(args[0]));
 	}
-
 }
