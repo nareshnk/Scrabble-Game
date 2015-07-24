@@ -10,7 +10,8 @@ import java.util.*;
 public class Anagrams {
     
 	public Map<String, String> map = new HashMap<String, String>();
-	
+	private static final String FILE = "C://Users/test/Documents/GitHub/ScrabbleWordGenerator/sowpods-scrabble-list.txt";
+		
     
 	public String sortString(String original) {
         char[] chars = original.toCharArray();
@@ -85,6 +86,10 @@ public class Anagrams {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
+		
+			Anagrams a= new Anagrams();
+			a.readFile(FILE);	
+			System.out.println(a.map.containsKey("act"));
         }
 }
