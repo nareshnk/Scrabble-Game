@@ -3,15 +3,15 @@ Given a rack as input, the output is the best possible words that can be used du
 
 ###Members and Work Allocation
 
-**Set up the basic framework of finding the best word for a given set of letters in the rack**
+1. **Set up the basic framework of finding the best word for a given set of letters in the rack**
 
 Balaji and Srravya
 
-**Handle the possibility of blank tiles as a part of the input rack**
+2. **Handle the possibility of blank tiles as a part of the input rack**
 
 Naresh and Mayank
 
-**Finding the best words when there is a constraint to fill up specified positions with specified letters**
+3. **Finding the best words when there is a constraint to fill up specified positions with specified letters**
 
 Soniya and Pooja
 
