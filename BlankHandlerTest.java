@@ -4,7 +4,7 @@ import org.junit.Test;
 /**
  * Created by test on 7/24/2015.
  */
-public class BlankHandlingTest extends TestCase {
+public class BlankHandlerTest extends TestCase {
     @Test
     public void testUpdatedScore() throws Exception {
         BlankHandler blankHandler = new BlankHandler();
