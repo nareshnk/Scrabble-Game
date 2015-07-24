@@ -2,7 +2,7 @@ import java.util.*;
 
 class BaseWordGenerator{
 	//private static final String FILE = "C://Users/test/Documents/GitHub/ScrabbleWordGenerator/sowpods-scrabble-list.txt";
-	private static final String FILE = "C:/Users/test/Documents/ScrabbleFinal/ScrabbleWordGenerator/sowpods-scrabble-list.txt";
+	private static final String FILE = "C:/Users/test/Documents/ScrabbleWordGenerator/sowpods.txt";
 
 	static Anagrams AnagramCollection;
 
@@ -10,18 +10,9 @@ class BaseWordGenerator{
 
 		int score;
 		for(String eachWord: words){
-<<<<<<< HEAD
-			//System.out.println(eachWord+AnagramCollection.map.containsKey(eachWord));
-=======
->>>>>>> fdc4bc26f75afb30adc7bcbe18fc8b58184efe53
 			if (AnagramCollection.map.containsKey(eachWord)) {
-				//System.out.println(eachWord);
 				score = wordScore(eachWord);
-<<<<<<< HEAD
-				
-=======
 
->>>>>>> fdc4bc26f75afb30adc7bcbe18fc8b58184efe53
 				if (scoreMap.containsKey(score)) {
 					scoreMap.put(score, scoreMap.get(score) + " " + AnagramCollection.map.get(eachWord));
 				}
@@ -97,19 +88,16 @@ class BaseWordGenerator{
 
 public static void main (String[] args) throws Exception {
 
-		
 		AnagramCollection = new Anagrams();
-<<<<<<< HEAD
-        AnagramCollection.readFile(FILE);	
-		System.out.println(generateScoreHash(args[0]));
-=======
         AnagramCollection.readFile(FILE);
 
 		Scanner input = new Scanner(System.in);
 
 		System.out.print("GIVE INPUT  \n");
 		String rackWords = input.nextLine();
-
+		System.out.print("If any constraint, input in format letter followed by position without space");
+		String constraint = input.nextLine();
+		
 		Map<Integer, String> updatedWordScore = new HashMap<Integer, String>();
 		Map<Integer, String> sortedWords;
 
@@ -141,10 +129,13 @@ public static void main (String[] args) throws Exception {
 
 			sortedWords = new TreeMap<Integer, String>(generateScoreHash(rackWords));
 		}
+		if (constraint != null){
+			sortedWords = new TreeMap<Integer, String>(PositionalConstraintChecker.ConstraintChecker(new TreeMap<Integer, String>(sortedWords), constraint));
+		}	
 
 	for(int entry: sortedWords.keySet()) {
 		System.out.println(entry+" "+sortedWords.get(entry));
 	}
->>>>>>> fdc4bc26f75afb30adc7bcbe18fc8b58184efe53
 	}
+
 }
