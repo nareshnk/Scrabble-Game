@@ -1,16 +1,20 @@
 # ScrabbleWordGenerator
 Given a rack as input, the output is the best possible words that can be used during play. 
 
-**Members**
+###Members and Work Allocation
 
-Soniya
+**Set up the basic framework of finding the best word for a given set of letters in the rack**
 
-Pooja
+Balaji and Srravya
 
-Naresh
+**Handle the possibility of blank tiles as a part of the input rack**
 
-Mayank
+Naresh and Mayank
 
-Balaji
+**Finding the best words when there is a constraint to fill up specified positions with specified letters**
 
-Srravya
+Soniya and Pooja
+
+
+
+ 
