@@ -1,8 +1,12 @@
 Group 1
   Class:    BaseWordGenerator 
-  Methods:  ArrayList<String> generateAllCombinationsOfWords(String input)
-            Map<Integer, String> generateScoreHash(String rack)
-
+  Methods:  Map<Integer, String> generateScoreHash(String rack)
+            This method takes as input the rack of letters and generates a map as output. The key is each possible score for the             rack and the value is a list of words which have that score. 
+            The method uses 
+                ArrayList<String> generateAllCombinationsOfWords(String input)
+                addToHash(scoreMap,allPossibleWords)
+                int wordScore(String word)
+                
 Group 2
   Class:    UpdateScores
   Method:   int update_score(String s1,String s2)
