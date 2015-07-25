@@ -1,7 +1,7 @@
 Group 1
   Class:    ScrabbleWordSuggestor 
   Methods:  Map<Integer, String> generateScoreHash(String rack)
-            This method takes as input the rack of letters and generates a map as output. The key is each possible score for the             rack and the value is a list of words which have that score. 
+            This method takes as input the rack of letters and generates as output (score,wordlist) pairs.   
             The method uses 
                 ArrayList<String> generateAllCombinationsOfWords(String input)
                 addToHash(scoreMap,allPossibleWords)
