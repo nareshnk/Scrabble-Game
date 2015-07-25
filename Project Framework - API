@@ -1,5 +1,5 @@
 Group 1
-  Class:    BaseWordGenerator 
+  Class:    ScrabbleWordSuggestor 
   Methods:  Map<Integer, String> generateScoreHash(String rack)
             This method takes as input the rack of letters and generates a map as output. The key is each possible score for the             rack and the value is a list of words which have that score. 
             The method uses 
@@ -8,13 +8,22 @@ Group 1
                 int wordScore(String word)
                 
 Group 2
-  Class:    UpdateScores
-  Method:   int update_score(String s1,String s2)
-  
   Class:    BlankHandler
   Methods:  void replaceBlanks(String rackAlphabets)
             ArrayList<String> getBlankReplacedWords(String word)
+            
+            Blank is replaced to get all possible rack alphabets replacing the blanks - returns List(rack words)
+            
+  Class:    UpdateScores
+  Method:   int update_score(String s1,String s2)
+            
+            for each word in the list
+              Generate HashScore for all Scrable words possible from the rack alphabet  
+              Update the score for each of the words (original score - score of blank replaced alphabet)  
               
 Group 3
   Class:    PositionalConstraintChecker
   Methods:  TreeMap<Integer,String> ConstraintChecker(TreeMap<Integer, String> wordList, String constraint)
+            
+            Input: A tree map with the score as key and a list of words with the same score as the value along with a constraints string.
+            Output: A tree map with the score as key and only the words that satisfy the positional constraints as the value.
