@@ -1,7 +1,7 @@
 import java.util.*;
 
 class BaseWordGenerator{
-	//private static final String FILE = "C://Users/test/Documents/GitHub/ScrabbleWordGenerator/sowpods-scrabble-list.txt";
+	
 	private static final String FILE = "C:/Users/test/Documents/ScrabbleWordGenerator/sowpods.txt";
 
 	static Anagrams AnagramCollection;
