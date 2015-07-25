@@ -25,5 +25,5 @@ Group 3
   Class:    PositionalConstraintChecker
   Methods:  TreeMap<Integer,String> ConstraintChecker(TreeMap<Integer, String> wordList, String constraint)
             
-            Input: A tree map with the score as key and a list of words with the same score as the value along with a constraints string.
+            Input: A tree map with the score as key and a list of words with the same score as the value, along with a constraint string.
             Output: A tree map with the score as key and only the words that satisfy the positional constraints as the value.
