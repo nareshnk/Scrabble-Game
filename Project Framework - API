@@ -8,11 +8,16 @@ Group 1
                 int wordScore(String word)
                 
 Group 2
-  Class:    ScrabbleBlankRackScore
-  Methods:  ArrayList<String> getBlankReplacedWords(String word)
-            updateScore(word, rackAplhabets) - updates the score of a word
+  Class:    ScrabbleBlankrackScore
+  Methods:  replaceBlanks(String rackAlphabets)
+            ArrayList<String> getBlankReplacedWords(String word)
             
-            returns Blankreplaced words with their score
+            Blank is replaced to get all possible rack alphabets replacing the blanks - returns List(rack words)
+            
+            
+            for each word in the list
+              Generate HashScore for all Scrable words possible from the rack alphabet  
+              Update the score for each of the words (original score - score of blank replaced alphabet)  
               
 Group 3
   Class:    PositionalConstraintChecker
@@ -20,6 +25,6 @@ Group 3
             
             Input: Valid words that can be generated from the rack along with the constraint.
             Output: List of words that satisfy the specified constraint.
-            This method selects the list of valid words that satisfy the constraints as specified by the user.
+            This method selects the words that satisfy the constraints as specified by the user.
             
             
