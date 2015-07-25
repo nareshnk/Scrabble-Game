@@ -1,0 +1,16 @@
+Group 1
+  Class:    BaseWordGenerator 
+  Methods:  ArrayList<String> generateAllCombinationsOfWords(String input)
+            Map<Integer, String> generateScoreHash(String rack)
+
+Group 2
+  Class:    UpdateScores
+  Method:   int update_score(String s1,String s2)
+  
+  Class:    BlankHandler
+  Methods:  void replaceBlanks(String rackAlphabets)
+            ArrayList<String> getBlankReplacedWords(String word)
+              
+Group 3
+  Class:    PositionalConstraintChecker
+  Methods:  TreeMap<Integer,String> ConstraintChecker(TreeMap<Integer, String> wordList, String constraint)
